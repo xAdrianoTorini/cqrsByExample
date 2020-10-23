@@ -17,6 +17,6 @@ O projeto foi desenvolvido visando demonstar o uso de CQRS em uma aplicação .N
 # Desenho da Solução
   ![alt text](https://i.ibb.co/4Rrv1z0/Project-Design.png)
 
-# Instructions
+# Instruções
  * Just Clone and Play ;)
 
