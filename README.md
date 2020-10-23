@@ -2,7 +2,8 @@
 
 
 O projeto foi desenvolvido visando demonstar o uso de CQRS em uma aplicação .NET Core
-Tecnologias Empregadas:
+
+# Tecnologias Empregadas:
   - .Net Core 3.1
   - MediaTR
   - Swagger
