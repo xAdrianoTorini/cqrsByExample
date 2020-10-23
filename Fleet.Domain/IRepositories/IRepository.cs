@@ -8,7 +8,7 @@ namespace Customer.Data.IRepositories
     {
         TEntity Get (Guid  id);
         TEntity Add(TEntity entity);
-        void Remove(Guid id);
+        bool Remove(Guid id);
         bool Update(TEntity entity);
     }
 }

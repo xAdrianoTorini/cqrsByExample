@@ -16,5 +16,14 @@ namespace Customer.Domain.Models
             Year = year;
             Model = model;
         }
+
+        public Bus(Guid id, string license, string assembler, int year, string model)
+        {
+            License = license;
+            Assembler = assembler;
+            Year = year;
+            Model = model;
+            Id = id;
+        }
     }
 }

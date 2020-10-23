@@ -42,5 +42,30 @@ namespace Customer.API.Controllers
         {
             return Ok(await CommandAsync(command));
         }
+
+        /// <summary>
+        /// Remove Bus 
+        /// </summary>
+        /// <param name="command">Info of the Bus</param>
+        /// <returns></returns>
+        [HttpDelete]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        public async Task<ActionResult> Delete(RemoveBusCommand command)
+        {
+            return Ok(await CommandAsync(command));
+        }
+        /// <summary>
+        /// Remove Bus 
+        /// </summary>
+        /// <param name="command">Info of the Bus</param>
+        /// <returns></returns>
+        [HttpPut]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        public async Task<ActionResult> Put(UpdateBusCommand command)
+        {
+            return Ok(await CommandAsync(command));
+        }
     }
 }

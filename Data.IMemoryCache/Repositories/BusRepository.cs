@@ -9,9 +9,8 @@ namespace Customer.Data.IRepositories
     {
         public BusRepository(IMemoryCache memoryCache) : base(memoryCache)
         {
-
         }
-        public Bus Get(Guid id)
+        public new Bus Get(Guid id)
         {
             return base.Get(id);
         }
@@ -21,12 +20,12 @@ namespace Customer.Data.IRepositories
             return base.Create(entity);
         }
 
-        public void Remove(Guid id)
+        public new bool Remove(Guid id)
         {
-             base.Remove(id);
+            return base.Remove(id);
         }
 
-        public bool Update(Bus entity)
+        public new bool Update(Bus entity)
         {
             return base.Update(entity);
         }

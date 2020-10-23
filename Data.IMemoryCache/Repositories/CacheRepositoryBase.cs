@@ -54,11 +54,20 @@ namespace Customer.Data.Repositories
             }
         }
 
-        public void Remove(Guid id)
+        public bool Remove(Guid id)
         {
             try
             {
-                this._memoryCache.Remove(id);
+                object entity;
+                this._memoryCache.TryGetValue(id, out entity);
+
+                if (entity != null)
+                {
+                    this._memoryCache.Remove(id);
+                    return true;
+                }
+                else
+                    return false;
             }
             catch (Exception ex)
             {
