@@ -8,18 +8,18 @@ using Microsoft.Extensions.Logging;
 
 namespace Customer.Service.Subcribers
 {
-    public class CustomerCreatedHandler : INotificationHandler<CustomerCreatedEvent>
+    public class BusCreatedHandler : INotificationHandler<BusCreatedEvent>
     {
         private readonly IBusRepository busRepository;
         private readonly ILogger _logger;
 
-        public CustomerCreatedHandler(IBusRepository busRepository, ILogger<CustomerCreatedHandler> logger)
+        public BusCreatedHandler(IBusRepository busRepository, ILogger<BusCreatedHandler> logger)
         {
             this.busRepository = busRepository;
             _logger = logger;
         }
 
-        public Task Handle(CustomerCreatedEvent notification, CancellationToken cancellationToken)
+        public Task Handle(BusCreatedEvent notification, CancellationToken cancellationToken)
         {
             return default;
         }

@@ -14,19 +14,16 @@ namespace Customer.Service.Services
     {
         private readonly IBusRepository _busRepository;
         private readonly IBusMapper _customerDxos;
-        private readonly ILogger _logger;
 
-        public GetBusHandler(IBusRepository busRepository, IBusMapper customerDxos, ILogger<GetBusHandler> logger)
+        public GetBusHandler(IBusRepository busRepository, IBusMapper customerDxos)
         {
             this._busRepository = busRepository;
             _customerDxos = customerDxos ?? throw new ArgumentNullException(nameof(customerDxos));
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public async Task<BusDto> Handle(GetBusQuery request, CancellationToken cancellationToken)
         {
-           
-            return null;
+            return _customerDxos.MapCustomerDto(_busRepository.Get(request.Id));
         }
     }
 }

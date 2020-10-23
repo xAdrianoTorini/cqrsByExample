@@ -3,13 +3,13 @@ using MediatR;
 
 namespace Customer.Domain.Events
 {
-    public class CustomerCreatedEvent : INotification
+    public class BusCreatedEvent : INotification
     {
-        public Guid CustomerId { get; }
+        public Guid Id { get; }
 
-        public CustomerCreatedEvent(Guid customerId)
+        public BusCreatedEvent(Guid id)
         {
-            CustomerId = customerId;
+            this.Id = id;
         }
     }
 }

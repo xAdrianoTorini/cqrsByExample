@@ -1,4 +1,6 @@
-﻿using Customer.Service.Dxos;
+﻿using Customer.Data.IRepositories;
+using Customer.Service.Dxos;
+using Customer.Service.Services;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,8 +36,11 @@ namespace Customer.API
             });
 
             services.AddScoped<IBusMapper, BusMapper>();
+            services.AddScoped<IBusRepository, BusRepository>();
 
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(typeof(CreateBusHandler));//Not Scan unecessary things.
+            services.AddMediatR(typeof(GetBusHandler));//Not Scan unecessary things.
+
 
             services.AddLogging();
             services.AddMemoryCache();

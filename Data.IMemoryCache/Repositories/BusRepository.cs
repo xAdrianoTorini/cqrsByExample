@@ -1,42 +1,38 @@
 using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
 using Customer.Data.Repositories;
 using Customer.Domain.Models;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Customer.Data.IRepositories
 {
-    public class BusRepository : RepositoryBase<Bus>, IBusRepository
+    public class BusRepository : CacheRepositoryBase<Bus>, IBusRepository
     {
-        public void Add(Bus entity)
+        public BusRepository(IMemoryCache memoryCache) : base(memoryCache)
         {
-            throw new NotImplementedException();
+
+        }
+        public Bus Get(Guid id)
+        {
+            return base.Get(id);
         }
 
+        public Bus Add(Bus entity)
+        {
+            return base.Create(entity);
+        }
+
+        public void Remove(Guid id)
+        {
+             base.Remove(id);
+        }
+
+        public bool Update(Bus entity)
+        {
+            return base.Update(entity);
+        }
         public void Dispose()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<Bus> Get(Expression<Func<Bus, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Bus>> GetList(Expression<Func<Bus, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(Bus entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Bus entity)
-        {
-            throw new NotImplementedException();
+            GC.Collect();//Medo.
         }
     }
 }

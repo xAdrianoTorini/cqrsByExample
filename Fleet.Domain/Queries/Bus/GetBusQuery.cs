@@ -13,13 +13,13 @@ namespace Customer.Domain.Queries
         }
 
         [JsonConstructor]
-        public GetBusQuery(Guid customerId)
+        public GetBusQuery(Guid id)
         {
-            CustomerId = customerId;
+            Id = id;
         }
 
         [JsonProperty("id")]
         [Required]
-        public Guid CustomerId { get; set; }
+        public Guid Id { get; set; }
     }
 }

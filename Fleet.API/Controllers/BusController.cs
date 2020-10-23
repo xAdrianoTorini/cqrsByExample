@@ -9,36 +9,36 @@ using Microsoft.AspNetCore.Mvc;
 namespace Customer.API.Controllers
 {
 
-    public class FleetController : ApiControllerBase
+    public class BusController : ApiControllerBase
 
     {
-        public FleetController(IMediator mediator) : base(mediator)
+        public BusController(IMediator mediator) : base(mediator)
         {
         }
 
         /// <summary>
-        /// Get customer by id
+        /// Get bus by id
         /// </summary>
-        /// <param name="id">Id of customer</param>
+        /// <param name="id">Id of the bus</param>
         /// <returns>Customer information</returns>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(BusDto), 200)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
-        public async Task<ActionResult<BusDto>> GetCustomerAsync(Guid id)
+        public async Task<ActionResult<BusDto>> GetBusAsync(Guid id)
         {
             return Single(await QueryAsync(new GetBusQuery(id)));
         }
 
         /// <summary>
-        /// Create new customer
+        /// Create new bus
         /// </summary>
-        /// <param name="command">Info of customer</param>
+        /// <param name="command">Info of the Bus</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        public async Task<ActionResult> CreateCustomerAsync([FromBody] CreateBusCommand command)
+        public async Task<ActionResult> CreateBusAsync(CreateBusCommand command)
         {
             return Ok(await CommandAsync(command));
         }

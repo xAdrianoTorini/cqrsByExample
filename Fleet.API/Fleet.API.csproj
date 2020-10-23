@@ -18,6 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Data.IMemoryCache\Fleet.Data.IMemoryCache.csproj" />
       <ProjectReference Include="..\Fleet.Domain\Fleet.Domain.csproj" />
       <ProjectReference Include="..\Fleet.Service\Fleet.Handlers.csproj" />
     </ItemGroup>
