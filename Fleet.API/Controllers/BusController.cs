@@ -33,7 +33,7 @@ namespace Customer.API.Controllers
         /// <summary>
         /// Create new bus
         /// </summary>
-        /// <param name="command">Info of the Bus</param>
+        /// <param name="command">Create a new Bus</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -46,7 +46,7 @@ namespace Customer.API.Controllers
         /// <summary>
         /// Remove Bus 
         /// </summary>
-        /// <param name="command">Info of the Bus</param>
+        /// <param name="command">Remove a Bus</param>
         /// <returns></returns>
         [HttpDelete]
         [ProducesResponseType(200)]
@@ -56,9 +56,9 @@ namespace Customer.API.Controllers
             return Ok(await CommandAsync(command));
         }
         /// <summary>
-        /// Remove Bus 
+        /// Updated Bus 
         /// </summary>
-        /// <param name="command">Info of the Bus</param>
+        /// <param name="command">Update a Bus</param>
         /// <returns></returns>
         [HttpPut]
         [ProducesResponseType(200)]
