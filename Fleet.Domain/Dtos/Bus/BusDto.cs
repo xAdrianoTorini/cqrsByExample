@@ -9,8 +9,6 @@ namespace Customer.Domain.Dtos
         public Guid Id { get; set; }
         [JsonProperty("License")]
         public string License { get; set; }
-        [JsonProperty("Year")]
-        public int Year { get; set; }
         [JsonProperty("Model")]
         public string Model { get; set; }
 

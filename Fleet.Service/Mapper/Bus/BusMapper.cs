@@ -14,8 +14,7 @@ namespace Customer.Service.Dxos
                 cfg.CreateMap<Domain.Models.Bus, Domain.Dtos.BusDto>()
                     .ForMember(dst => dst.Id, opt => opt.MapFrom(src => src.Id))
                     .ForMember(dst => dst.License, opt => opt.MapFrom(src => src.License))
-                    .ForMember(dst => dst.Model, opt => opt.MapFrom(src => src.Model))
-                    .ForMember(dst => dst.Year, opt => opt.MapFrom(src => src.Year));
+                    .ForMember(dst => dst.Model, opt => opt.MapFrom(src => src.Model));
             });
 
             _mapper = config.CreateMapper();

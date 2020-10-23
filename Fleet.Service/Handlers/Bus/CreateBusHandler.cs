@@ -25,7 +25,7 @@ namespace Customer.Service.Services
 
         public async  Task<BusDto> Handle(CreateBusCommand request, CancellationToken cancellationToken)
         {
-            var result = _busRepository.Add(new Domain.Models.Bus(request.License, request.Assembler, request.Year, request.Model));
+            var result = _busRepository.Add(new Domain.Models.Bus(request.License, request.Assembler, request.Model));
             return _customerDxos.MapCustomerDto(result);
         }
     }

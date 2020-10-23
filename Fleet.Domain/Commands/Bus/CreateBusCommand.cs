@@ -18,10 +18,7 @@ namespace Customer.Domain.Commands
         [MaxLength(255)]
         public string Assembler { get; set; }
 
-        [JsonProperty("Year")]
-        [Required]
-        [MaxLength(4)]
-        public int Year { get; set; }
+        
 
         [JsonProperty("Model")]
         [Required]
@@ -33,11 +30,10 @@ namespace Customer.Domain.Commands
         }
 
         [JsonConstructor]
-        public CreateBusCommand(string license, string assembler, int year, string model)
+        public CreateBusCommand(string license, string assembler, string model)
         {
             License = license;
             Assembler = assembler;
-            Year = year;
             Model = model;
         }
     }

@@ -40,7 +40,7 @@ namespace Customer.API
 
             services.AddMediatR(typeof(CreateBusHandler));//Not Scan unecessary things.
             services.AddMediatR(typeof(GetBusHandler));//Not Scan unecessary things.
-
+            services.AddMediatR(typeof(UpdateBusHandler));//Not Scan unecessary things.
 
             services.AddLogging();
             services.AddMemoryCache();

@@ -38,7 +38,7 @@ namespace Customer.API.Controllers
         [HttpPost]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        public async Task<ActionResult> CreateBusAsync(CreateBusCommand command)
+        public async Task<ActionResult> CreateBusAsync([FromBody]CreateBusCommand command)
         {
             return Ok(await CommandAsync(command));
         }
@@ -61,9 +61,9 @@ namespace Customer.API.Controllers
         /// <param name="command">Update a Bus</param>
         /// <returns></returns>
         [HttpPut]
-        [ProducesResponseType(200)]
-        [ProducesResponseType(400)]
-        public async Task<ActionResult> Put(UpdateBusCommand command)
+        //[ProducesResponseType(200)]
+        //[ProducesResponseType(400)]
+        public async Task<ActionResult> Put([FromBody]UpdateBusCommand command)
         {
             return Ok(await CommandAsync(command));
         }

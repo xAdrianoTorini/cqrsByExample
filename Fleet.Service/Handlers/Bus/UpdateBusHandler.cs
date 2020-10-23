@@ -24,7 +24,7 @@ namespace Customer.Service.Services
 
         public async  Task<UpdateResult> Handle(UpdateBusCommand request, CancellationToken cancellationToken)
         {
-            var result = _busRepository.Update(new Domain.Models.Bus(request.Id, request.License, request.Assembler, request.Year, request.Model));
+            var result = _busRepository.Update(new Domain.Models.Bus(Guid.Parse(request.Id), request.License, request.Assembler, request.Model));
             return new UpdateResult(result) ;
         }
     }
