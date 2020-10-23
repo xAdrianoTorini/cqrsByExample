@@ -8,6 +8,10 @@ namespace Customer.Domain.Models
         public string Assembler { get; set; }
         public string Model { get; set; }
 
+        public Bus()
+        {
+
+        }
         public Bus(string license, string assembler, string model)
         {
             License = license;

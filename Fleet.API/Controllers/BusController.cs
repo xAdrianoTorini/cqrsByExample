@@ -51,9 +51,9 @@ namespace Customer.API.Controllers
         [HttpDelete]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        public async Task<ActionResult> Delete(RemoveBusCommand command)
+        public async Task<ActionResult> Delete(Guid guid)
         {
-            return Ok(await CommandAsync(command));
+            return Ok(await CommandAsync(new RemoveBusCommand(guid)));
         }
         /// <summary>
         /// Updated Bus 
@@ -61,8 +61,8 @@ namespace Customer.API.Controllers
         /// <param name="command">Update a Bus</param>
         /// <returns></returns>
         [HttpPut]
-        //[ProducesResponseType(200)]
-        //[ProducesResponseType(400)]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         public async Task<ActionResult> Put([FromBody]UpdateBusCommand command)
         {
             return Ok(await CommandAsync(command));
